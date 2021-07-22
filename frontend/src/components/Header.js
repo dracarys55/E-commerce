@@ -8,7 +8,7 @@ const Header = () => {
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         {/* variant 字體顏色  collapseOnSelect 不懂*/}
         <Container>
-          <LinkContainer to='/home'>
+          <LinkContainer to='/'>
             <Navbar.Brand>Proshop</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />

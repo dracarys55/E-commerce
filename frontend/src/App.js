@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
+import CartScreen from './screens/CartScreen';
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
         <Container>
           <Route path='/' component={HomeScreen} exact />
           {/* 沒有  exact path /後面接甚麼都可以還是會到 HomeScreen*/}
-          <Route path='/product/:id' component={ProductScreen} exact />
+          <Route path='/product/:id' component={ProductScreen} />
+          <Route path='/cart/:id?' component={CartScreen} />
         </Container>
       </main>
       <Footer />
