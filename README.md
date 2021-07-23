@@ -43,3 +43,5 @@ Dependencies: <br/>
  <br/>
 Dependencies: <br/>
 1.mongoose <br/>
+#網站佈署:
+1.使用 Heroku 來佈署網站
