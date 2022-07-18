@@ -12,7 +12,7 @@ import {
 } from 'react-bootstrap';
 import Message from '../components/Message';
 import { addToCart, removeFromCart } from '../actions/cartActions';
-
+// @ts-ignore
 const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id;
 
@@ -20,7 +20,7 @@ const CartScreen = ({ match, location, history }) => {
   console.log(qty);
 
   const dispatch = useDispatch();
-
+  // @ts-ignore
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
@@ -31,11 +31,11 @@ const CartScreen = ({ match, location, history }) => {
       dispatch(addToCart(productId, qty));
     }
   }, [dispatch, productId, qty]);
-
+  // @ts-ignore
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
   };
-
+  // @ts-ignore
   const qtyControl = (item) => {
     return (
       <Form.Control
@@ -55,7 +55,7 @@ const CartScreen = ({ match, location, history }) => {
       </Form.Control>
     );
   };
-
+  // @ts-ignore
   const cartItemsDisplay = cartItems.map((item) => {
     return (
       <ListGroup.Item key={item.product}>
@@ -100,11 +100,13 @@ const CartScreen = ({ match, location, history }) => {
             <ListGroup.Item>
               {/* reduce() 方法將一個累加器及陣列中每項元素（由左至右）傳入函式  將陣列化為單一值*/}
               <h2>
+                {/*  @ts-ignore */}
                 Subtotal({cartItems.reduce((acc, item) => acc + item.qty, 0)}
                 )items
               </h2>
               $
               {cartItems
+                // @ts-ignore
                 .reduce((acc, item) => acc + item.qty * item.price, 0)
                 .toFixed(2)}
             </ListGroup.Item>

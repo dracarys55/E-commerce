@@ -7,8 +7,14 @@ import img2 from '../sliderImages/sid-ramirez-j_UHrIaV-8M-unsplash.jpg';
 import img3 from '../sliderImages/nikita-kachanovsky-mwytIca3qNA-unsplash.jpg';
 import img4 from '../sliderImages/omid-armin-gSZCLsE7ysc-unsplash.jpg';
 
+type imagesProps = {
+  id: string;
+  alt: string;
+  url: string;
+  href: string;
+};
 //把四張圖片放入一個陣列 並依序給予個別屬性
-const images = [
+const images: imagesProps[] = [
   {
     id: '1',
     alt: 'Cannon Camera',
@@ -45,7 +51,7 @@ export default class Carousel extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 4750,
       className: 'slides',
       pauseOnHover: false,
     };
@@ -54,7 +60,6 @@ export default class Carousel extends Component {
       <Slider {...settings}>
         {/* 從 react-slick 引入的 Slider */}
         {images.map((image) => {
-          //對每一個 images進行以下動作
           return (
             <div className='wrapper' key={image.id}>
               {/*連結另開新視窗*/}

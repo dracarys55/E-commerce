@@ -9,12 +9,12 @@ const Header = () => {
         {/* variant 字體顏色  collapseOnSelect 不懂*/}
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>Proshop</Navbar.Brand>
+            <Navbar.Brand>Super Shop</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
-              {/* 有問題: nav 沒有推到右邊 */}
+              {/* 有問題: nav 沒有推到右邊  resolved*/}
               <LinkContainer to='/cart'>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i>Cart

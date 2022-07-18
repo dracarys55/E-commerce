@@ -15,6 +15,7 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 import { listProductDetails } from '../actions/productActions';
 
+// @ts-ignore
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
 
@@ -22,6 +23,7 @@ const ProductScreen = ({ history, match }) => {
   //product._id (有很多 1.2.3.4)  === match.params.id (當前Router 的id)
   //const product = products.find((product) => product._id === match.params.id)
   const dispatch = useDispatch();
+  // @ts-ignore
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
@@ -42,16 +44,21 @@ const ProductScreen = ({ history, match }) => {
       <Link className='btn btn-dark my-3' to='/'>
         Go Back
       </Link>
+
+      {/* handling error */}
       {loading ? (
         <Loader />
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
+        // if no error  show:
         <Row>
           <Col md={6}>
             <Image src={product.image} alt={product.name} fluid />
             {/* fluid 讓圖片在Container裡面 */}
           </Col>
+
+          {/* middle part start  */}
           <Col md={3}>
             <ListGroup variant='flush'>
               <ListGroup.Item>
@@ -70,6 +77,9 @@ const ProductScreen = ({ history, match }) => {
               </ListGroup.Item>
             </ListGroup>
           </Col>
+          {/* middle part end  */}
+
+          {/* Add to cart part start  */}
           <Col md={3}>
             <Card>
               <ListGroup>
@@ -90,6 +100,7 @@ const ProductScreen = ({ history, match }) => {
                   </Row>
                 </ListGroup.Item>
 
+                {/* && 邏輯運算子AND 假如前面為真 回傳後面 這裡無法使用if  */}
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <Row>
@@ -98,8 +109,13 @@ const ProductScreen = ({ history, match }) => {
                         <Form.Control
                           as='select'
                           value={qty}
+                          // @ts-ignore
                           onChange={(e) => setQty(e.target.value)}
                         >
+                          {/* <option> 是用來建立選項，而選項內容放在 <option></option> 標籤裡面。 */}
+
+                          {/* ...Array(product.countInStock) 讓 countInStock 變成一個 Arrray [0,1,2..] */}
+                          {/* keys() 把裡面都定義成 相對應的值  */}
                           {[
                             [...Array(product.countInStock).keys()].map((x) => (
                               <option key={x + 1} value={x + 1}>

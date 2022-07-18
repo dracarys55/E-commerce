@@ -9,6 +9,7 @@ import {
 } from '../constants/productConstants';
 
 //action creator
+// @ts-ignore
 export const listProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
@@ -23,13 +24,16 @@ export const listProducts = () => async (dispatch) => {
     dispatch({
       type: PRODUCT_LIST_FAIL,
       payload:
+        // @ts-ignore
         error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
+          ? // @ts-ignore
+            error.response.data.message
+          : // @ts-ignore
+            error.message,
     });
   }
 };
-
+// @ts-ignore
 export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
@@ -43,9 +47,11 @@ export const listProductDetails = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PRODUCT_DETAILS_FAIL,
+      // @ts-ignore
       payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
+        // @ts-ignore
+        error.response && error.response.data.message // @ts-ignore
+          ? error.response.data.message // @ts-ignore
           : error.message,
     });
   }

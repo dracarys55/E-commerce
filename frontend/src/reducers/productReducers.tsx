@@ -9,6 +9,7 @@ import {
 
 //this is how  to write a reducer
 //指定應用程式的 state 要如何去應對改變
+// @ts-ignore
 export const productListReducer = (state = { products: [] }, action) => {
   switch (action.type) {
     case PRODUCT_LIST_REQUEST:
@@ -24,6 +25,7 @@ export const productListReducer = (state = { products: [] }, action) => {
 
 export const productDetailsReducer = (
   state = { product: { reviews: [] } },
+  // @ts-ignore
   action
 ) => {
   switch (action.type) {

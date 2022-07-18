@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
@@ -11,6 +11,7 @@ const HomeScreen = () => {
   const dispatch = useDispatch();
 
   //去state裡面找到我要的loading, error, products
+  // @ts-ignore
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
 
@@ -29,6 +30,7 @@ const HomeScreen = () => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
+          {/* @ts-ignore */}
           {products.map((product) => (
             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
               <Product product={product} />
@@ -37,7 +39,7 @@ const HomeScreen = () => {
         </Row>
       )}
 
-      {/* 為甚麼這裡的function 要使用括號 而不是{} */}
+      {/* 為甚麼這裡的function 要使用括號 而不是{}  resolved */}
     </>
   );
 };

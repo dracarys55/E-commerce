@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+// @ts-ignore
 const Rating = ({ value, text, color }) => {
   return (
     <div className='rating'>

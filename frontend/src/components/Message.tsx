@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert } from 'react-bootstrap';
-
+// @ts-ignore
 const Message = ({ variant, children }) => {
   return <Alert variant={variant}>{children}</Alert>;
 };
