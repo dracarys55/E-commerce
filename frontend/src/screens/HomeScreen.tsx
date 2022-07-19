@@ -7,12 +7,33 @@ import Loader from '../components/Loader';
 import { listProducts } from '../actions/productActions';
 import Carousel from '../components/Slider';
 
+import { RootState } from '../store.d';
+
+type productTypes = {
+  _id: string;
+  brand: string;
+  category: string;
+  countInStock: number;
+  createdAt: string;
+  description: string;
+  image: string;
+  name: string;
+  numReviews: number;
+  price: number;
+  rating: number;
+  reviews: [];
+  updatedAt: string;
+  user: string;
+};
+
 const HomeScreen = () => {
   const dispatch = useDispatch();
 
   //去state裡面找到我要的loading, error, products
-  // @ts-ignore
-  const productList = useSelector((state) => state.productList);
+  /* 
+ 為何需要使用 RootState
+*/
+  const productList = useSelector((state: RootState) => state.productList);
   const { loading, error, products } = productList;
 
   //redux 動作執行
@@ -30,16 +51,13 @@ const HomeScreen = () => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
-          {/* @ts-ignore */}
-          {products.map((product) => (
+          {products.map((product: productTypes) => (
             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
               <Product product={product} />
             </Col>
           ))}
         </Row>
       )}
-
-      {/* 為甚麼這裡的function 要使用括號 而不是{}  resolved */}
     </>
   );
 };

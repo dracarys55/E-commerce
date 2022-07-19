@@ -1,7 +1,7 @@
 import { CART_ADD_ITEM, CART_REMOVE_ITEM } from '../constants/cartConstants';
 
-// @ts-ignore
-export const cartReducer = (state = { cartItems: [] }, action) => {
+/* action type 後續修復 */
+export const cartReducer = (state = { cartItems: [] }, action: any) => {
   switch (action.type) {
     case CART_ADD_ITEM:
       const item = action.payload;

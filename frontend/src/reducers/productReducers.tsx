@@ -9,8 +9,8 @@ import {
 
 //this is how  to write a reducer
 //指定應用程式的 state 要如何去應對改變
-// @ts-ignore
-export const productListReducer = (state = { products: [] }, action) => {
+/* action type 後續修復 */
+export const productListReducer = (state = { products: [] }, action: any) => {
   switch (action.type) {
     case PRODUCT_LIST_REQUEST:
       return { loading: true };

@@ -2,8 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import Rating from './Rating';
-// @ts-ignore
-const Product = ({ product }: any) => {
+
+type productTypes = {
+  product: {
+    _id: string;
+    brand: string;
+    category: string;
+    countInStock: number;
+    createdAt: string;
+    description: string;
+    image: string;
+    name: string;
+    numReviews: number;
+    price: number;
+    rating: number;
+    reviews: [];
+    updatedAt: string;
+    user: string;
+  };
+};
+
+const Product = ({ product }: productTypes) => {
   return (
     <Card className='my-3 p-3 rounded'>
       <Link to={`/product/${product._id}`}>

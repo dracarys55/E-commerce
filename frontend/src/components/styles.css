@@ -1,15 +1,11 @@
-
-
-@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
 
 .wrapper {
   display: flex;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-
 }
 
 .sliderImg {
@@ -17,7 +13,7 @@
   box-sizing: border-box;
   height: 80vh;
   width: 100%;
-  padding: 0px 2vw;
+  padding: 0px 0vw;
   object-fit: cover;
 }
 
@@ -30,15 +26,15 @@
   background-color: transparent;
 }
 
-.slick-next:before, .slick-prev:before {  
+.slick-next:before,
+.slick-prev:before {
   font-size: 50px;
   color: black;
   background-color: transparent;
-  
 }
 .slides .slick-prev {
-    left: -1.8%;
-  }
+  left: -1.8%;
+}
 
 .slides .slick-next {
   right: 0.5%;

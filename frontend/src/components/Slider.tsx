@@ -6,6 +6,7 @@ import img1 from '../sliderImages/thomas-ae-XrxpaLBekU8-unsplash.jpg';
 import img2 from '../sliderImages/sid-ramirez-j_UHrIaV-8M-unsplash.jpg';
 import img3 from '../sliderImages/nikita-kachanovsky-mwytIca3qNA-unsplash.jpg';
 import img4 from '../sliderImages/omid-armin-gSZCLsE7ysc-unsplash.jpg';
+import dog from '../sliderImages/dog.jpg';
 
 type imagesProps = {
   id: string;
@@ -39,6 +40,12 @@ const images: imagesProps[] = [
     url: img4, //對應到上面 引入的 img4
     href: '/product/60f5568b6ffa744eb4d2d68e',
   },
+  {
+    id: '5',
+    alt: '',
+    url: dog, //對應到上面 引入的 img4
+    href: '/product/60f5568b6ffa744eb4d2d68e',
+  },
 ];
 
 export default class Carousel extends Component {
@@ -46,6 +53,7 @@ export default class Carousel extends Component {
     const settings = {
       //對應到下面的 settings 參數 給予從 react-slick 引入的 Slider 使用
       dots: true,
+      fade: true,
       infinite: true,
       speed: 1000,
       slidesToShow: 1,
@@ -54,6 +62,7 @@ export default class Carousel extends Component {
       autoplaySpeed: 4750,
       className: 'slides',
       pauseOnHover: false,
+      arrows: false,
     };
 
     return (

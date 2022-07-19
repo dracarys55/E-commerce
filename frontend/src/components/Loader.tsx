@@ -1,6 +1,5 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
-// @ts-ignore
 const Loader = () => {
   return (
     <Spinner

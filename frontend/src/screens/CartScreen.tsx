@@ -12,8 +12,9 @@ import {
 } from 'react-bootstrap';
 import Message from '../components/Message';
 import { addToCart, removeFromCart } from '../actions/cartActions';
-// @ts-ignore
-const CartScreen = ({ match, location, history }) => {
+
+/*  match, location ，須確定回傳何值 */
+const CartScreen = ({ match, location }: any) => {
   const productId = match.params.id;
 
   const qty = location.search ? Number(location.search.split('=')[1]) : 1;

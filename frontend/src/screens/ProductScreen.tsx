@@ -15,16 +15,20 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 import { listProductDetails } from '../actions/productActions';
 
-// @ts-ignore
-const ProductScreen = ({ history, match }) => {
+import { RootState } from '../store.d';
+
+//any type 需解決
+const ProductScreen = ({ history, match }: any) => {
   const [qty, setQty] = useState(1);
 
   //.find() 去尋找 第一個 滿足 product._id === match.params.id的值
   //product._id (有很多 1.2.3.4)  === match.params.id (當前Router 的id)
   //const product = products.find((product) => product._id === match.params.id)
   const dispatch = useDispatch();
-  // @ts-ignore
-  const productDetails = useSelector((state) => state.productDetails);
+
+  const productDetails = useSelector(
+    (state: RootState) => state.productDetails
+  );
   const { loading, error, product } = productDetails;
 
   // 使用dispatch 拿到data

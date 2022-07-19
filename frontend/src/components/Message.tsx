@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Alert } from 'react-bootstrap';
-// @ts-ignore
-const Message = ({ variant, children }) => {
+
+type messageTyeps = {
+  variant: string;
+  children: ReactNode;
+};
+
+const Message = ({ variant, children }: messageTyeps) => {
   return <Alert variant={variant}>{children}</Alert>;
 };
 

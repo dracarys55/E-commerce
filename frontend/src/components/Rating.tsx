@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// @ts-ignore
-const Rating = ({ value, text, color }) => {
+
+type ratingProps = {
+  value: number;
+  text: string;
+  color: string;
+};
+const Rating = ({ value, text, color }: ratingProps) => {
   return (
     <div className='rating'>
       <span>
