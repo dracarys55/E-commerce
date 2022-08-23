@@ -1,3 +1,5 @@
+//seeder 是與server類似的 ，只是他連到本地端
+
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import colors from 'colors';
@@ -14,6 +16,7 @@ connectDB();
 
 const importData = async () => {
   try {
+    //清空原先所有在 database裡面的東西
     await Order.deleteMany();
     await Product.deleteMany();
     await User.deleteMany();
@@ -22,7 +25,7 @@ const importData = async () => {
     const adminUser = createdUsers[0]._id;
     const sampleProducts = products.map((product) => {
       return { ...product, user: adminUser };
-      // ...甚麼意思
+      // 把 adminUser 的id 傳進去product裡面
     });
 
     await Product.insertMany(sampleProducts);

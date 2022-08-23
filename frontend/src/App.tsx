@@ -11,7 +11,7 @@ const App = () => {
     <Router>
       <Header />
       <main className='py-3'>
-        <Container>
+        <Container fluid>
           <Route path='/' component={HomeScreen} exact />
           {/* 沒有  exact path /後面接甚麼都可以還是會到 HomeScreen*/}
           <Route path='/product/:id' component={ProductScreen} />
