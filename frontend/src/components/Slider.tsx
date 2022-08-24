@@ -6,7 +6,6 @@ import img1 from '../sliderImages/thomas-ae-XrxpaLBekU8-unsplash.jpg';
 import img2 from '../sliderImages/sid-ramirez-j_UHrIaV-8M-unsplash.jpg';
 import img3 from '../sliderImages/nikita-kachanovsky-mwytIca3qNA-unsplash.jpg';
 import img4 from '../sliderImages/omid-armin-gSZCLsE7ysc-unsplash.jpg';
-/* import dog from '../sliderImages/dog.jpg'; */
 
 type imagesProps = {
   id: string;
@@ -20,32 +19,26 @@ const images: imagesProps[] = [
     id: '1',
     alt: 'Cannon Camera',
     url: img1, //對應到上面 引入的 img1
-    href: '/product/60f5568c6ffa744eb4d2d690',
+    href: '/product/62d92f019c3ffd27c0d74213',
   },
   {
     id: '2',
     alt: 'Airpods ',
     url: img2, //對應到上面 引入的 img2
-    href: '/product/60f5568b6ffa744eb4d2d68e',
+    href: '/product/62d92f019c3ffd27c0d74211',
   },
   {
     id: '3',
     alt: 'Playstation 4 PRO',
     url: img3, //對應到上面 引入的 img3
-    href: '/product/60f5568c6ffa744eb4d2d691',
+    href: '/product/62d92f019c3ffd27c0d74214',
   },
   {
     id: '4',
     alt: 'Airpods',
     url: img4, //對應到上面 引入的 img4
-    href: '/product/60f5568b6ffa744eb4d2d68e',
+    href: '/product/62d92f019c3ffd27c0d74211',
   },
-  /* {
-    id: '5',
-    alt: '',
-    url: dog, //對應到上面 引入的 img4
-    href: '/product/60f5568b6ffa744eb4d2d68e',
-  }, */
 ];
 
 export default class Carousel extends Component {
@@ -71,7 +64,6 @@ export default class Carousel extends Component {
         {images.map((image) => {
           return (
             <div className='wrapper' key={image.id}>
-              {/*連結另開新視窗*/}
               <a href={image.href} rel='noreferrer' target='_blank'>
                 <img className='sliderImg' src={image.url} alt={image.alt} />
               </a>

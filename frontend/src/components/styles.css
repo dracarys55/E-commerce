@@ -39,3 +39,16 @@
 .slides .slick-next {
   right: 0.5%;
 }
+
+/* 
+when fade: true,
+When using the fade options, slides are not actually set to display: none their visibility and opacity is just altered. This means that which ever slide is last
+ in the list is the one which is actually clickable.  No matter which slide is shown,
+ you can only ever get to the link on the last slide. 
+*/
+.slick-slide {
+  pointer-events: none;
+}
+.slick-active {
+  pointer-events: auto;
+}
